@@ -23,64 +23,64 @@ public class Prefs {
 
     public static final String PLAYER_BULLET_TWO_LEFT_NUMBER = "player_bullet_two_left_number";
 
-    public static Prefs getPrefs(){
+    public static Prefs getPrefs() {
         return new Prefs();
     }
 
-    private static Preferences getInstance(){
+    private static Preferences getInstance() {
         Preferences prefs = Gdx.app.getPreferences(PREFS_NAME);
         return prefs;
     }
 
-    public void clear(){
+    public void clear() {
         getInstance().clear();
     }
 
     // ------ sound state ------
-    public void setSoundEffectsEnabled(boolean state){
-        getInstance().putBoolean(SOUND,state).flush();
+    public void setSoundEffectsEnabled(boolean state) {
+        getInstance().putBoolean(SOUND, state).flush();
     }
 
-    public boolean isSoundEffectsEnabled(){
-        return getInstance().getBoolean(SOUND,true);
+    public boolean isSoundEffectsEnabled() {
+        return getInstance().getBoolean(SOUND, true);
     }
 
     // --- passed leves ---
-    public int getPassedLevel(){
-        return getInstance().getInteger(LEVEL,0);
+    public int getPassedLevel() {
+        return getInstance().getInteger(LEVEL, 0);
     }
 
-    public void setPassedLevel(int level){
+    public void setPassedLevel(int level) {
         int passed = getPassedLevel();
-        if(level>passed){
-            getInstance().putInteger(LEVEL,level).flush();
+        if (level > passed) {
+            getInstance().putInteger(LEVEL, level).flush();
         }
     }
 
     // --- pv ---
-    public int getPv(){
-        return getInstance().getInteger(PV,0);
+    public int getPv() {
+        return getInstance().getInteger(PV, 0);
     }
 
-    public void addPv(){
-        int pv = getPv()+1;
-        getInstance().putInteger(PV,pv).flush();
+    public void addPv() {
+        int pv = getPv() + 1;
+        getInstance().putInteger(PV, pv).flush();
     }
 
     // --- left bullet number ---
-    public int getPlayerBulletOneLeftNumber(){
-        return getInstance().getInteger(PLAYER_BULLET_ONE_LEFT_NUMBER,0); // bullet one
+    public int getPlayerBulletOneLeftNumber() {
+        return getInstance().getInteger(PLAYER_BULLET_ONE_LEFT_NUMBER, 0); // bullet one
     }
 
-    public void setPlayerBulletOneLeftNumber(int number){
-        getInstance().putInteger(PLAYER_BULLET_ONE_LEFT_NUMBER,number).flush();
+    public void setPlayerBulletOneLeftNumber(int number) {
+        getInstance().putInteger(PLAYER_BULLET_ONE_LEFT_NUMBER, number).flush();
     }
 
-    public int getPlayerBulletTwoLeftNumber(){
-        return getInstance().getInteger(PLAYER_BULLET_TWO_LEFT_NUMBER,0); // bullet two
+    public int getPlayerBulletTwoLeftNumber() {
+        return getInstance().getInteger(PLAYER_BULLET_TWO_LEFT_NUMBER, 0); // bullet two
     }
 
-    public void setPlayerBulletTwoLeftNumber(int number){
-        getInstance().putInteger(PLAYER_BULLET_TWO_LEFT_NUMBER,number).flush();
+    public void setPlayerBulletTwoLeftNumber(int number) {
+        getInstance().putInteger(PLAYER_BULLET_TWO_LEFT_NUMBER, number).flush();
     }
 }

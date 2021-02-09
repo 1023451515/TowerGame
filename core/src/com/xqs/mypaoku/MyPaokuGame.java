@@ -153,8 +153,8 @@ public class MyPaokuGame extends Game {
 		int pv = Prefs.getPrefs().getPv();
 		if(pv == 0){
 			// 首次使用设置子弹数
-			Prefs.getPrefs().setPlayerBulletOneLeftNumber(30);
-			Prefs.getPrefs().setPlayerBulletTwoLeftNumber(30);
+			Prefs.getPrefs().setPlayerBulletOneLeftNumber(100);
+			Prefs.getPrefs().setPlayerBulletTwoLeftNumber(100);
 		}
 
 		// pv++
